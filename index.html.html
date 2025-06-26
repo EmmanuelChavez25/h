@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La mente humana y sus misterios</title>
+  <meta name="description" content="Podcast humano y cercano que explora emociones, dudas y experiencias. La mente humana y sus misterios, con episodios para acompañarte y crecer." />
+  <meta name="keywords" content="podcast, mente humana, emociones, autoayuda, reflexión, crecimiento personal, autosabotaje, éxito, miedo, sueños" />
+  <meta name="author" content="Emmanuel Chavez" />
+  <meta property="og:title" content="La mente humana y sus misterios" />
+  <meta property="og:description" content="Podcast humano y cercano que explora emociones, dudas y experiencias. Episodios para acompañarte y crecer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tu-dominio-o-url.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80" />
+  <style>
+    /* Reset y base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #eee;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header con fondo e imagen */
+    header {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center / cover;
+      padding: 80px 20px 60px 20px;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+    header > div {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      z-index: 1;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+    header h1 {
+      font-size: 3em;
+      color: #1DB954;
+      margin-bottom: 0.3em;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+    header p {
+      font-size: 1.15em;
+      line-height: 1.5;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+      margin: 0 auto;
+    }
+
+    /* Animación */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main container */
+    main {
+      background-color: rgba(18, 18, 18, 0.9);
+      margin: 30px auto 40px auto;
+      max-width: 850px;
+      padding: 25px 25px 40px 25px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(29, 185, 84, 0.3);
+      color: #ddd;
+      flex-grow: 1;
+    }
+
+    main h2 {
+      font-size: 2em;
+      color: #1DB954;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 0 0 6px #1DB954;
+    }
+
+    /* Episodios */
+    section {
+      margin-bottom: 45px;
+    }
+    section h3 {
+      font-size: 1.5em;
+      color: #1DB954;
+      margin-bottom: 12px;
+      text-shadow: 0 0 5px #1DB954;
+    }
+
+    iframe {
+      border-radius: 14px;
+      width: 100%;
+      height: 160px;
+      box-shadow: 0 0 15px rgba(29, 185, 84, 0.6);
+      transition: box-shadow 0.3s ease;
+    }
+    iframe:hover {
+      box-shadow: 0 0 30px #1DB954;
+    }
+
+    /* Botones Spotify */
+    .spotify-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #1DB954 0%, #1ed760 100%);
+      color: #000;
+      font-weight: 700;
+      font-size: 1em;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(29, 185, 84, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .spotify-button:hover {
+      background: linear-gradient(90deg, #1ed760 0%, #1DB954 100%);
+      box-shadow: 0 8px 20px rgba(29, 185, 84, 0.8);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 1em;
+      border-top: 2px solid #1DB954;
+      flex-shrink: 0;
+    }
+    footer a {
+      color: #1DB954;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Botón compartir */
+    .share-container {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .share-btn {
+      background: #1DB954;
+      border: none;
+      color: #000;
+      font-weight: 700;
+      padding: 12px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(29, 185, 84, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1em;
+    }
+    .share-btn:hover {
+      background: #1ed760;
+      box-shadow: 0 8px 20px rgba(29, 185, 84, 0.8);
+    }
+    /* Mensaje compartido */
+    .share-message {
+      color: #1DB954;
+      font-weight: 700;
+      margin-top: 15px;
+      min-height: 24px;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+    .share-message.visible {
+      opacity: 1;
+    }
+
+    /* Responsive: móvil */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 0.9em;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      main {
+        padding: 15px 12px 25px 12px;
+        margin: 20px auto 30px auto;
+      }
+      section h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      iframe {
+        height: 120px;
+        border-radius: 12px;
+      }
+      .spotify-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .share-btn {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px 0;
+      }
+      footer {
+        font-size: 0.85em;
+        padding: 15px 10px;
+      }
+      .share-container {
+        margin-bottom: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>La mente humana y sus misterios</h1>
+      <p>
+        En este espacio, "La mente humana y sus misterios", cada episodio está hecho para conectar con vos desde lo más humano. Aquí no encontrarás solo teoría o datos fríos, sino conversaciones que exploran las emociones, las dudas y las experiencias que todos vivimos en silencio.<br /><br />
+        Queremos que sientas que estás escuchando a un amigo que entiende tus miedos, tus desafíos y también tus sueños. Cada episodio está pensado para acompañarte,
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="share-container">
+      <button class="share-btn" id="shareBtn">Compartir esta página</button>
+      <div class="share-message" id="shareMessage"></div>
+    </div>
+
+    <h2>🎧 Episodios disponibles:</h2>
+
+    <!-- Episodios -->
+    <section>
+      <h3>Episodio 1</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/2DnB0Vm5ZUsxy2SzgQSqg1?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/2DnB0Vm5ZUsxy2SzgQSqg1" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 2</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/6PAEVzsnR4kCit85alEfHf?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/6PAEVzsnR4kCit85alEfHf" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 3</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/04FcIR4XTLhQuUUQc9s13I?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/04FcIR4XTLhQuUUQc9s13I" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 4</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/3OXI0MNolFBk6FwEmPXhEQ?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/3OXI0MNolFBk6FwEmPXhEQ" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 5</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/6wSPsCLLYb3HIaZdtu3R2E?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/6wSPsCLLYb3HIaZdtu3R2E" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 6</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/6fGg4MzwkkiXyxD99DiTPh?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/6fGg4MzwkkiXyxD99DiTPh" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 7</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/0giLcc2Dxi3tfwBMmyGj6Z?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/0giLcc2Dxi3tfwBMmyGj6Z" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 8</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/63wW5skcjiKDYrYx7d16ET?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/63wW5skcjiKDYrYx7d16ET" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 9</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/6hladyuZwvNhj6oIOhebUS?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/6hladyuZwvNhj6oIOhebUS" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 10</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/2UrbBg3GwMxh7lZ4kPVFix?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/2UrbBg3GwMxh7lZ4kPVFix" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 11</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/1OGD8Z1da1av0lACMIclFy?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/1OGD8Z1da1av0lACMIclFy" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 12</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/7cRGGUj2WfeC2rMyeeMWwz?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/7cRGGUj2WfeC2rMyeeMWwz" target="_blank" >Escuchar en Spotify</a>
+    </section>
+
+    <section>
+      <h3>Episodio 13</h3>
+      <iframe
+        src="https://open.spotify.com/embed/episode/3L8VsWhJVv6JRFVkM0QCsA?utm_source=generator"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+      <a class="spotify-button" href="https://open.spotify.com/episode/3L8VsWhJVv6JRFVkM0QCsA" target="_blank" >Escuchar en Spotify</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desarrollado por <strong>Emmanuel Chavez</strong></p>
+    <p>
+      Seguiremos agregando más episodios para acompañarte.<br />
+      ¿Querés enviarme un mensaje?  
+      <a href="https://wa.me/542615915946" target="_blank" rel="noopener noreferrer">
+        Enviá un WhatsApp
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const shareBtn = document.getElementById('shareBtn');
+    const shareMsg = document.getElementById('shareMessage');
+
+    shareBtn.addEventListener('click', () => {
+      const pageUrl = window.location.href;
+      if (navigator.share) {
+        navigator.share({
+          title: 'La mente humana y sus misterios',
+          text: 'Te invito a escuchar este podcast lleno de emociones y reflexiones.',
+          url: pageUrl,
+        })
+        .then(() => {
+          shareMsg.textContent = '¡Página compartida con éxito!';
+          shareMsg.classList.add('visible');
+          setTimeout(() => shareMsg.classList.remove('visible'), 3000);
+        })
+        .catch((error) => {
+          shareMsg.textContent = 'Error al compartir: ' + error;
+          shareMsg.classList.add('visible');
+          setTimeout(() => shareMsg.classList.remove('visible'), 3000);
+        });
+      } else {
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent('Te invito a escuchar el podcast "La mente humana y sus misterios": ' + pageUrl)}`;
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent('Escuchá este podcast: "La mente humana y sus misterios"')}&url=${encodeURIComponent(pageUrl)}`;
+
+        const shareOptions = `
+          Compartir en: 
+          <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">WhatsApp</a> | 
+          <a href="${facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+          <a href="${twitterUrl}" target="_blank" rel="noopener noreferrer">Twitter</a>
+        `;
+        shareMsg.innerHTML = shareOptions;
+        shareMsg.classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
